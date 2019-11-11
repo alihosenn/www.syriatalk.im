@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="17" android:versionName="1.16" package="org.im.syriatalk" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21" />
+    <uses-permission android:name="com.android.venging.BILLING" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:glEsVersion="20000" android:required="true" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <application android:theme="@style/AppThemeLightBackground" android:label="@string/app_name" android:icon="@b/ic_launcher" android:allowBackup="true">
+        <activity android:name="org.win.oichat.StartupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.win.oichat.SignupActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.ActivityInformation" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.ActivityVideoPlayer" />
+        <activity android:name="org.win.oichat.ActivityImageView" />
+        <activity android:name="org.win.oichat.ActivityBlockList" />
+        <activity android:label="@string/settings" android:name="org.win.oichat.ActivitySettings" />
+        <activity android:name="org.win.oichat.LoginActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.Activity_OwnerList" />
+        <activity android:name="org.win.oichat.Activity_AdminList" />
+        <activity android:name="org.win.oichat.Activity_MemberList" />
+        <activity android:name="org.win.oichat.ActivityConfigRoom" />
+        <activity android:name="org.win.oichat.ActivityFreindInfo" />
+        <activity android:name="org.win.oichat.ActivityMyProfile" />
+        <activity android:name="org.win.oichat.Activity_OutcastList" />
+        <activity android:name="org.win.oichat.addFriendsActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.whoishereActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.ConferenceBookActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.ActivityEditStatus" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" />
+        <activity android:name="org.win.oichat.activity_info" />
+        <activity android:label="@string/app_name" android:name="org.win.oichat.ShareFileActivity" android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden|stateAlwaysVisible">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="org.win.oichat.MainActivity" />
+        <activity android:theme="@style/ChatActivity" android:name="org.win.oichat.ChatActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" android:parentActivityName="org.win.oichat.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.win.oichat.MainActivity" />
+        </activity>
+        <activity android:theme="@style/ChatActivity" android:name="org.win.oichat.ChatRoomActivity" android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize|adjustNothing" android:parentActivityName="org.win.oichat.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.win.oichat.MainActivity" />
+        </activity>
+        <activity android:label="@string/search_contact" android:name="org.win.oichat.SearchUserActivity" />
+        <activity android:theme="@style/AppTheme" android:label="@string/status" android:name="org.win.oichat.SetStatusActivity" />
+        <activity android:label="@string/new_contacts" android:name="org.win.oichat.ContactRequestListActivity" android:parentActivityName="org.win.oichat.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.win.oichat.MainActivity" />
+        </activity>
+        <activity android:theme="@j/Theme_AppCompat_Light_NoActionBar" android:name="de.duenndns.ssl.MemorizingActivity" />
+        <activity android:name="oichat.android.camera.CropImage" />
+        <activity android:theme="@style/AppTheme" android:label="@string/contact_profile" android:name="org.win.oichat.UserProfileActivity" />
+        <activity android:label="@string/settings" android:name="org.win.oichat.SettingsActivity" android:hardwareAccelerated="false" />
+        <activity android:label="@string/server" android:name="org.win.oichat.ServerSettingsActivity" />
+        <receiver android:name="org.win.oichat.receivers.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="org.win.oichat.receivers.ShutDownReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="org.win.oichat.receivers.IncomingContactRequestReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.mstr.letschat.intent.action.CONTACT_REQUEST_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="org.win.oichat.receivers.NetworkReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <service android:name="org.win.oichat.service.MessageService" android:exported="false" />
+        <provider android:name="org.win.oichat.providers.DatabaseContentProvider" android:exported="false" android:authorities="com.mstr.letschat.providerjvog" />
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyA4MxIPfhZKC1xhAZCFm1qOGIs0isCbyCy" />
+    </application>
+</manifest>
